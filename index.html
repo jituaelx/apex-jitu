@@ -3,259 +3,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Faster Esports BD | VIP Premium</title>
+
+<title>🚀🔥 FASTER ESPORTS BD 🔥🚀 🎮 THE ULTIMATE ESPORTS PLATFORM IN BANGLADESH 🇧🇩</title>
+
+<!-- 🔥 Open Graph (Share Preview) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="🚀🔥 FASTER ESPORTS BD 🔥🚀 🎮 THE ULTIMATE ESPORTS PLATFORM IN BANGLADESH 🇧🇩">
+<meta property="og:description" content="বাংলাদেশের সেরা Esports প্ল্যাটফর্ম। Tournament খেলো, জিতো এবং instant withdraw করো।">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/free-whiteboard-online/Free-Erasorio-Alternative-for-Collaborative-Design@7467df573e0ae4715f343ccaa44387e63db99ab8/uploads/2026-04-02T12-59-24-866Z-4ev4euzuc.jpg">
+<meta property="og:url" content="https://your-site-link.com">
+
+<!-- 🔥 Twitter Preview -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🚀🔥 FASTER ESPORTS BD 🔥🚀 🎮 THE ULTIMATE ESPORTS PLATFORM IN BANGLADESH 🇧🇩">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/free-whiteboard-online/Free-Erasorio-Alternative-for-Collaborative-Design@7467df573e0ae4715f343ccaa44387e63db99ab8/uploads/2026-04-02T12-59-24-866Z-4ev4euzuc.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&family=Righteous&family=Oxanium:wght@800&display=swap" rel="stylesheet">
 
 <style>
-  :root {
-    --fire-main: #ff4d00;
-    --fire-bright: #ffae00;
-    --fire-dark: #cc3300;
-    --bg-deep: #02040a;
-  }
+:root {
+  --fire-main: #ff4d00;
+  --fire-bright: #ffae00;
+  --fire-dark: #cc3300;
+  --bg-deep: #02040a;
+}
 
-  /* 🚫 SCROLLBAR & SELECTION HIDE */
-  * { 
-    box-sizing: border-box; 
-    transition: all 0.3s ease;
-    -webkit-tap-highlight-color: transparent; /* মোবাইলে টাচ করলে নীল আভা আসবে না */
-    user-select: none; /* কোনো কিছু সিলেক্ট বা কপি হবে না */
-    -webkit-user-select: none;
-  }
+* { 
+  box-sizing: border-box; 
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg-deep);
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-deep);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
 
-  /* স্ক্রলবার পুরোপুরি অদৃশ্য করার জন্য */
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  body {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-  }
+::-webkit-scrollbar { display: none; }
 
-  /* 🔥 ডাইনামিক ফায়ার পার্টিকেলস */
-  .particles {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    pointer-events: none;
-  }
+.particles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
 
-  .particles span {
-    position: absolute;
-    bottom: -100px;
-    background: radial-gradient(circle, var(--fire-main), var(--fire-bright), transparent);
-    border-radius: 50%;
-    opacity: 0.8;
-    filter: blur(5px);
-    box-shadow: 0 0 15px var(--fire-main);
-    animation: rise-and-flicker linear infinite;
-    will-change: transform;
-  }
+.particles span {
+  position: absolute;
+  bottom: -100px;
+  background: radial-gradient(circle, var(--fire-main), var(--fire-bright), transparent);
+  border-radius: 50%;
+  animation: rise linear infinite;
+}
 
-  @keyframes rise-and-flicker {
-    0% { transform: translateY(0) scale(1); opacity: 0; }
-    10% { opacity: 0.8; }
-    100% { transform: translateY(-120vh) scale(0.3); opacity: 0; }
-  }
+@keyframes rise {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
 
-  .content {
-    position: relative;
-    z-index: 2;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 20px 150px; /* বাটনের জন্য এক্সট্রা প্যাডিং */
-  }
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px 20px 150px;
+}
 
-  /* 🏆 HEADER SECTION */
-  .header {
-    text-align: center;
-    padding: 60px 20px 30px;
-  }
+.header {
+  text-align: center;
+  padding: 60px 20px 30px;
+}
 
-  .logo {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 20px;
-    border-radius: 35%;
-    background: linear-gradient(45deg, var(--fire-dark), var(--fire-bright));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 40px var(--fire-main);
-    animation: pulse 2s infinite ease-in-out;
-  }
+.logo {
+  width: 110px;
+  height: 110px;
+  margin: auto;
+  border-radius: 35%;
+  background: linear-gradient(45deg, var(--fire-dark), var(--fire-bright));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .logo span {
-    font-family: 'Righteous', cursive;
-    font-size: 60px;
-    color: #fff;
-  }
+.logo span {
+  font-size: 60px;
+}
 
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 30px var(--fire-main); }
-    50% { transform: scale(1.05); box-shadow: 0 0 50px var(--fire-bright); }
-  }
+.title {
+  font-family: 'Oxanium', sans-serif;
+  font-size: 34px;
+}
 
-  .title {
-    font-family: 'Oxanium', sans-serif;
-    font-size: 34px;
-    font-weight: 800;
-    background: linear-gradient(to bottom, #fff, var(--fire-bright));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px var(--fire-main));
-  }
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 15px;
+}
 
-  /* 💎 VIP CARDS */
-  .card-grid {
-    display: grid;
-    gap: 20px;
-    margin-top: 20px;
-  }
+.btn-wrap {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  padding: 10px;
+}
 
-  .card {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 77, 0, 0.2);
-    border-radius: 24px;
-    padding: 25px;
-  }
-
-  .card h3 {
-    margin: 0 0 10px;
-    color: var(--fire-bright);
-    font-size: 20px;
-    font-family: 'Oxanium', sans-serif;
-  }
-
-  .card p {
-    margin: 0;
-    color: #ddd;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  /* 📥 MEGA DOWNLOAD BUTTON */
-  .btn-wrap {
-    position: fixed;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 450px;
-    z-index: 1000;
-  }
-
-  .download-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(45deg, var(--fire-dark), var(--fire-main), var(--fire-bright));
-    background-size: 200% auto;
-    padding: 20px;
-    border-radius: 50px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 20px;
-    font-family: 'Oxanium', sans-serif;
-    box-shadow: 0 15px 40px rgba(255, 60, 0, 0.5);
-    animation: flow 3s linear infinite;
-    cursor: pointer;
-    border: none;
-    width: 100%;
-  }
-
-  @keyframes flow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
-  }
-
-  .download-btn:active {
-    transform: scale(0.96);
-  }
-
+.download-btn {
+  display: block;
+  text-align: center;
+  padding: 18px;
+  border-radius: 40px;
+  background: linear-gradient(45deg, var(--fire-dark), var(--fire-main));
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
 </style>
 </head>
 
 <body>
 
-  <div class="particles" id="fireGen"></div>
+<div class="particles" id="fireGen"></div>
 
-  <div class="content">
-    
-    <div class="header">
-      <div class="logo"><span>F</span></div>
-      <div class="title">FASTER ESPORTS BD</div>
-      <p style="color: #aaa; letter-spacing: 5px; font-size: 12px; margin-top: 5px;">EST. 2026 | PREMIUM ONLY</p>
-    </div>
-
-    <div class="card-grid">
-      <div class="card">
-        <h3>🔥 High-Stake Tournaments</h3>
-        <p>প্রতিদিন Free Fire ম্যাচে লড়াই করো এবং সরাসরি প্রাইজমানি জিতে নাও। প্রতিটি জয় তোমার স্কিলের আসল পরিচয়।</p>
-      </div>
-
-      <div class="card">
-        <h3>⚡ Lightning Fast Withdraw</h3>
-        <p>টাকা উত্তোলনের জন্য আর অপেক্ষা নয়। বিকাশ বা নগদে পেমেন্ট নাও মুহূর্তের মধ্যে। আমরা গতির সাথে আপোষ করি না।</p>
-      </div>
-
-      <div class="card">
-        <h3>🛡️ Anti-Cheat Shield</h3>
-        <p>আমরা গ্যারান্টি দিচ্ছি ১০০% হ্যাকারমুক্ত পরিবেশ। শুধুমাত্র আসল স্কিল দিয়েই চ্যাম্পিয়ন হওয়া সম্ভব আমাদের এখানে।</p>
-      </div>
-
-      <div class="card">
-        <h3>💎 VIP Support Team</h3>
-        <p>যেকোনো প্রয়োজনে আমাদের সাপোর্ট টিম ২৪/৭ তোমার পাশে আছে। আমরা বিশ্বাস করি গেমারদের সম্মানই আমাদের সার্থকতা।</p>
-      </div>
-    </div>
-
+<div class="content">
+  <div class="header">
+    <div class="logo"><span>F</span></div>
+    <div class="title">FASTER ESPORTS BD</div>
   </div>
 
-  <div class="btn-wrap">
-    <a href="https://github.com/jituaelx/Inapp-update/releases/download/v1.0/Fast.Eports.BD_1.0.apk" class="download-btn">
-          DOWNLOAD THE APP
-    </a>
-  </div>
+  <div class="card">🔥 Tournament খেলো এবং জিতো</div>
+  <div class="card">⚡ Instant Withdraw</div>
+  <div class="card">🛡️ Anti Cheat</div>
+  <div class="card">💎 VIP Support</div>
+</div>
 
-  <script>
-    // ডাইনামিক ফায়ার পার্টিকেল জেনারেটর (স্মুথ এনিমেশন)
-    const fireGen = document.getElementById('fireGen');
-    const count = 30;
+<div class="btn-wrap">
+  <a href="https://github.com/jituaelx/Inapp-update/releases/download/v1.0/Fast.Eports.BD_1.0.apk" class="download-btn">
+    DOWNLOAD APP
+  </a>
+</div>
 
-    for (let i = 0; i < count; i++) {
-      const p = document.createElement('span');
-      const size = Math.random() * 20 + 10;
-      const left = Math.random() * 100;
-      const duration = Math.random() * 5 + 4;
-      const delay = Math.random() * 5;
-
-      p.style.width = size + 'px';
-      p.style.height = size + 'px';
-      p.style.left = left + '%';
-      p.style.animationDuration = duration + 's';
-      p.style.animationDelay = delay + 's';
-      
-      fireGen.appendChild(p);
-    }
-  </script>
+<script>
+const fireGen = document.getElementById('fireGen');
+for (let i = 0; i < 30; i++) {
+  let s = document.createElement('span');
+  s.style.width = s.style.height = Math.random()*20+10+'px';
+  s.style.left = Math.random()*100+'%';
+  s.style.animationDuration = Math.random()*5+4+'s';
+  fireGen.appendChild(s);
+}
+</script>
 
 </body>
 </html>
