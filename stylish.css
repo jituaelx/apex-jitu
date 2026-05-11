@@ -1,1 +1,226 @@
 
+/* Color Palette and Root Variables */
+:root {
+    --bg-dark-scene: #040710;
+    --card-bg-dark: rgba(10, 15, 30, 0.4);
+    --primary-neon: #00f7ff;
+    --secondary-violet: #8c00ff;
+    --stat-icon-color: #ffd000;
+    --text-pure: #ffffff;
+    --text-dim: #cbd5e1;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body {
+    background: var(--bg-dark-scene);
+    color: var(--text-pure);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 15px;
+}
+
+/* --- Animated Background Scene --- */
+.bg-scene {
+    position: fixed; inset: 0; z-index: -1;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.glow-sphere {
+    position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.35;
+    animation: spheric-float 15s infinite alternate ease-in-out;
+}
+.s1 { width: 350px; height: 350px; background: var(--primary-neon); top: -100px; left: -100px; }
+.s2 { width: 300px; height: 300px; background: var(--secondary-violet); bottom: -50px; right: -50px; animation-duration: 20s; }
+
+.particle {
+    position: absolute; background: white; border-radius: 50%; opacity: 0.2;
+    animation: particle-rise linear infinite;
+}
+.p1 { width: 3px; height: 3px; top: 10%; left: 20%; animation-duration: 8s; }
+.p2 { width: 2px; height: 2px; top: 70%; left: 80%; animation-duration: 6s; }
+.p3 { width: 4px; height: 4px; top: 40%; left: 50%; animation-duration: 10s; }
+
+@keyframes spheric-float { from { transform: translate(0, 0); } to { transform: translate(50px, 50px) scale(1.05); } }
+@keyframes particle-rise { from { transform: translateY(0); } to { transform: translateY(-30vh); opacity: 0; } }
+
+/* --- Root Container and Card --- */
+.root-container { width: 100%; max-width: 440px; }
+
+.main-card-ui {
+    background: var(--card-bg-dark);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    transition: transform 0.5s ease-out;
+}
+.main-card-ui:hover { transform: translateY(-5px) scale(1.01); }
+
+/* Card Entry Animation */
+.animate-card {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: card-slide-up 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+@keyframes card-slide-up { to { opacity: 1; transform: translateY(0); } }
+
+/* --- Banner & Profile --- */
+.banner-section {
+    position: relative; height: 260px;
+    overflow: hidden;
+    background: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+}
+.banner-section img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.profile-img {
+    animation: profile-entry 1s 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+    transform: translateY(100px) scale(0.5);
+    opacity: 0;
+}
+@keyframes profile-entry { to { opacity: 1; transform: translateY(0) scale(1); } }
+
+.live-status {
+    position: absolute; top: 25px; left: 25px;
+    background: rgba(255, 0, 80, 0.8);
+    backdrop-filter: blur(10px);
+    color: white; font-size: 11px; font-weight: 800;
+    padding: 10px 18px; border-radius: 50px;
+    display: flex; align-items: center; gap: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    opacity: 0; animation: fade-in-scale 0.5s 1.3s ease-out forwards;
+}
+.blinking-dot { width: 7px; height: 7px; background: white; border-radius: 50%; box-shadow: 0 0 10px 1px #ff0050; animation: blink 1.5s infinite; }
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+/* --- Content Body --- */
+.content-body { padding: 35px; text-align: center; }
+
+/* Text Animations */
+.animate-text-slide {
+    opacity: 0; transform: translateY(30px);
+    animation: fade-in-slide 0.6s 1.5s ease-out forwards;
+}
+@keyframes fade-in-slide { to { opacity: 1; transform: translateY(0); } }
+
+.animate-text-reveal {
+    overflow: hidden; border-right: .15em solid orange;
+    white-space: nowrap; margin: 0 auto; letter-spacing: .15em;
+    width: 0; animation: reveal-text 1s 2.1s steps(40, end) forwards;
+}
+@keyframes reveal-text { to { width: 100%; border-right-color: transparent; } }
+
+.animate-text-reveal-delayed {
+    opacity: 0;
+    animation: fade-in-scale 0.5s 2.8s ease-out forwards;
+}
+@keyframes fade-in-scale { from { transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+
+.server-info h3 { font-size: 15px; color: var(--text-dim); }
+.server-info p { font-size: 10px; color: var(--primary-neon); text-transform: uppercase; margin-bottom: 25px; }
+
+.main-title { font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+.main-title .highlight { color: var(--secondary-violet); text-shadow: 0 0 15px rgba(140, 0, 255, 0.6); }
+.tagline { font-size: 14px; color: var(--text-dim); margin-bottom: 35px; }
+
+/* --- Stats Panel with Individual Item and Icon Animation --- */
+.stats-panel {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 35px;
+    opacity: 0; animation: fade-in 0.8s 3.3s ease-out forwards;
+}
+.stat-box {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 18px 5px; border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s, transform 0.3s;
+}
+.stat-box:hover { background: rgba(255, 255, 255, 0.08); transform: translateY(-3px); }
+
+.stat-icon { color: var(--stat-icon-color); font-size: 20px; margin-bottom: 10px; display: inline-block; transition: 0.3s; }
+.stat-box:hover .stat-icon { color: #fff; }
+
+/* Stat Icon Pulse Animations */
+.animate-icon-pulse { animation: stat-icon-pulse 2s infinite ease-in-out; }
+.animate-icon-pulse-delayed { animation: stat-icon-pulse 2s 0.6s infinite ease-in-out; }
+.animate-icon-pulse-delayed-2 { animation: stat-icon-pulse 2s 1.2s infinite ease-in-out; }
+@keyframes stat-icon-pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15) rotate(5deg); opacity: 0.8; } }
+
+.stat-box .val { font-size: 18px; font-weight: 700; color: #fff; display: block; margin-bottom: 3px; }
+.stat-box .lbl { font-size: 10px; color: #888; text-transform: uppercase; }
+
+/* Entry for Stats Panel */
+@keyframes fade-in { to { opacity: 1; } }
+
+/* --- Advanced Action Button --- */
+.download-button {
+    position: relative; display: flex; justify-content: center; align-items: center;
+    width: 100%; height: 75px;
+    background: linear-gradient(135deg, var(--primary-neon), var(--secondary-violet));
+    border-radius: 22px; text-decoration: none;
+    color: #fff; font-weight: 800; font-size: 16px;
+    overflow: hidden; box-shadow: 0 10px 40px rgba(0, 247, 255, 0.3);
+    margin-bottom: 30px; transition: 0.4s;
+    opacity: 0; animation: fade-in-scale 0.5s 4s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+.download-button:hover {
+    transform: scale(1.03) translateY(-2px);
+    box-shadow: 0 15px 50px rgba(0, 247, 255, 0.6);
+}
+.btn-text { display: flex; align-items: center; gap: 10px; }
+.btn-icon { color: #fff; font-size: 18px; animation: btn-icon-bolt 1.5s infinite ease-in-out; }
+@keyframes btn-icon-bolt { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+
+.btn-glint {
+    position: absolute; top: -50%; left: -50%;
+    width: 100%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+    animation: btn-glint 4s 4.5s infinite;
+}
+@keyframes btn-glint { 0% { top: -100%; left: -100%; } 100% { top: 100%; left: 100%; } }
+
+/* --- Floating Feature Pills --- */
+.pills-container {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    opacity: 0; animation: fade-in 0.8s 4.5s ease-out forwards;
+}
+.feature-pill {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 8px 16px; border-radius: 50px;
+    font-size: 11px; color: var(--text-dim);
+    display: flex; align-items: center; gap: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.feature-pill i { color: var(--primary-neon); font-size: 12px; }
+
+/* Pill Float Animations */
+.animate-pill-float-1 { animation: pill-float 4s infinite alternate ease-in-out; }
+.animate-pill-float-2 { animation: pill-float 4s 1s infinite alternate ease-in-out; }
+.animate-pill-float-3 { animation: pill-float 4s 2s infinite alternate ease-in-out; }
+@keyframes pill-float { to { transform: translateY(-5px); } }
+
+/* --- Footer --- */
+.footer-note {
+    margin-top: 30px; font-size: 10px; color: #555; line-height: 1.6;
+    opacity: 0; animation: fade-in-scale 0.5s 5s ease-out forwards;
+}
+
+/* --- Mobile Responsiveness Adjustments --- */
+@media (max-width: 480px) {
+    .main-card-ui { border-radius: 30px; }
+    .banner-section { height: 200px; }
+    .content-body { padding: 25px; }
+    .main-title { font-size: 26px; }
+    .tagline { font-size: 12px; }
+    .stat-box { padding: 15px 3px; }
+    .stat-box .val { font-size: 16px; }
+    .stat-box .lbl { font-size: 9px; }
+    .download-button { font-size: 14px; height: 65px; }
+}
